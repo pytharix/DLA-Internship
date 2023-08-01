@@ -1,4 +1,4 @@
-# DLA-Intership Program: Web Scraping and Data Dashboard with Apache Airflow and BigQuery
+# DLA-Intership Program: Web Scraping with Apache Airflow and BigQuery
 
 ## Overview
 
