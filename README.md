@@ -21,6 +21,10 @@ To run the project, you need to build the Docker image named "airflow_more" usin
 
 The project uses Docker Compose for orchestrating the entire setup. The "docker-compose.yml" file defines the services and volumes needed for the project. Note that the "FileNeeded" volume blends with the local storage and provides essential credential files and flat files required by the apps.
 
+### Scraper
+
+To run both Scraper apps, you need to install all libraries needed. All libraries that need for this apps is provided in `requirement.txt` that located in "DLA-Internship/Scrape". You can install it by typing `pip install -r requirement.txt`, make sure that current directory is same as `requrement.txt` located. Building new python virtual environment is recommended.
+
 ## Usage
 
 1. Build the Docker image "airflow_more" using the provided Dockerfile.
