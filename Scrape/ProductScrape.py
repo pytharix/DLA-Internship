@@ -460,8 +460,8 @@ def scrape_store_shop(link_store_d, driver_):
 
     while login:
         try:
-            driver_.find_element(By.NAME, "loginKey").send_keys("087789896668")
-            driver_.find_element(By.NAME, "password").send_keys("Delapan8")
+            driver_.find_element(By.NAME, "loginKey").send_keys("")
+            driver_.find_element(By.NAME, "password").send_keys("")
             login = False
 
         except:
