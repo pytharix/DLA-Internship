@@ -48,13 +48,13 @@ Note: To change the store that the apps will scrape, modify the "store_list" var
 
 1. Scraping Shopee requires login to access the page.
 2. The login process is not fully automated for all users yet, and currently, the apps require input for username/phone number and password.
-3. To input your credentials, find the lines written as python```driver_.find_element(By.NAME, "loginKey").send_keys("")``` and python```driver_.find_element(By.NAME, "password").send_keys("")``` in the code. Replace the empty strings with your username/phone number and password, respectively.
-4. After login, the apps will collect all information of the store "Adidas Combat Sport".
-5. Then, the apps will go to the category page specified in the code. The categories are defined in the "categ" variable, which can be found by examining the URL in Shopee.
-6. The apps will collect all products and their information for each category.
-7. It will then visit each product listed in that category to collect detailed information.
-8. The process continues for all categories assigned before.
-9. After scraping all required data from Shopee, the apps will finish scraping for the second web.
+3. To input your credentials, find the lines written as ```python driver_.find_element(By.NAME, "loginKey").send_keys("")``` and ```python driver_.find_element(By.NAME, "password").send_keys("")``` in the code. Replace the empty strings with your username/phone number and password, respectively.
+5. After login, the apps will collect all information of the store "Adidas Combat Sport".
+6. Then, the apps will go to the category page specified in the code. The categories are defined in the "categ" variable, which can be found by examining the URL in Shopee.
+7. The apps will collect all products and their information for each category.
+8. It will then visit each product listed in that category to collect detailed information.
+9. The process continues for all categories assigned before.
+10. After scraping all required data from Shopee, the apps will finish scraping for the second web.
 
 Note: To change the store that the apps will scrape, modify the "shopee_link" variable in the file "ProductScrape.py" located in "DLA-Intership/Scrape". The URL of the store should be provided in the "shopee_link".
 
