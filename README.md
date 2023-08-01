@@ -48,7 +48,7 @@ Note: To change the store that the apps will scrape, modify the "store_list" var
 
 1. Scraping Shopee requires login to access the page.
 2. The login process is not fully automated for all users yet, and currently, the apps require input for username/phone number and password.
-3. To input your credentials, find the lines written as driver_.find_element(By.NAME, "loginKey").send_keys("") and driver_.find_element(By.NAME, "password").send_keys("") in the code. Replace the empty strings with your username/phone number and password, respectively.
+3. To input your credentials, find the lines written as `driver_.find_element(By.NAME, "loginKey").send_keys("")` and `driver_.find_element(By.NAME, "password").send_keys("")` in the code. Replace the empty strings with your username/phone number and password, respectively.
 5. After login, the apps will collect all information of the store "Adidas Combat Sport".
 6. Then, the apps will go to the category page specified in the code. The categories are defined in the "categ" variable, which can be found by examining the URL in Shopee.
 7. The apps will collect all products and their information for each category.
