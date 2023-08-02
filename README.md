@@ -75,27 +75,27 @@ All collected data will be transformed into Python JSON objects and saved as fla
 
 # ETL (Extract Transform Load) Process
 
-The ETL process involves three main phases: Extract, Transform, and Load. Each phase utilizes specific objects - Extractor, Transformer, and Loader - to facilitate the data flow.
+The ETL process involves three main steps: Extract Phase, Transform Phase, and Load Phase. Each step is facilitated by a specific object - Extractor, Transformer, and Loader, respectively.
 
 ## Extract Phase
 
-The Extract Phase is handled by the "Extractor" object, which allows users to extract data from various sources, such as BigQuery and flat file JSON. Additional sources like APIs, local databases, etc., can be integrated in the future. The Extractor takes data from the source and transforms it into a PETL format table.
+The Extract Phase is managed by the "Extractor" object, allowing users to extract data from various sources such as BigQuery and flatfile JSON. Additional sources like APIs and local databases will be added in future iterations. The Extractor takes data from the source and transforms it into a PETL format table.
 
 ## Transform Phase
 
-The Transform Phase is managed by the "Transformer" object, which houses various transformation algorithms. As of now, the project includes one transformation algorithm responsible for altering specific values and column names in the table. The Transformer object applies the chosen algorithm whenever needed and returns the transformed table.
+The Transform Phase is handled by the "Transformer" object, which contains various transformation algorithms. Currently, the project includes one transformation algorithm that modifies specific values and column names in the table. Users can apply this transformation algorithm whenever needed, and the Transformer object returns the transformed table.
 
 ## Load Phase
 
-The Load Phase is orchestrated by the "Loader" object, responsible for uploading the extracted and transformed data to the target destination. Currently, the project only supports loading data to BigQuery. However, additional targets like local databases, flat files, or other data warehouse platforms may be added in future iterations.
+The Load Phase is orchestrated by the "Loader" object, responsible for uploading the extracted and transformed data to the desired target. Currently, the project only supports loading data to BigQuery. However, additional targets such as local databases, flat files, or other data warehouse platforms may be added in the future.
 
 ### Flow of the ETL Process
 
-1. **Extract Phase:** The Extractor extracts data from the source and converts it into a table format. The extracted data is saved as CSV files, which will be used in subsequent phases. The Extractor returns the paths of the CSV files.
+1. **Extract Phase:** The Extractor extracts data from the source and converts it into a table format. The extracted data is saved as CSV files, which are used in subsequent phases. The Extractor returns the paths of the CSV files.
 
 2. **Transform Phase:** The Transformer takes the paths of the CSV files as input and loads the CSV files as tables. It applies the desired transformation algorithm to the table as specified by the user. Once all necessary transformations are completed, the Transformer saves the transformed data as CSV files and returns the paths to the next step.
 
-3. **Load Phase:** The Loader takes the paths of the CSV files from the previous phase and extracts the data from the CSV files, converting them back into tables. The Loader then uploads the tables to the target data collection, which, as of now, is BigQuery.
+3. **Load Phase:** The Loader takes the paths of the CSV files from the previous phase and extracts the data from the CSV files, converting them back into tables. The Loader then uploads the tables to the target data collection, which currently supports BigQuery.
 
 ## Integration with Apache Airflow (DAGs Framework)
 
@@ -103,6 +103,11 @@ The ETL process can be orchestrated and scheduled using Apache Airflow's Directe
 
 To customize the ETL workflow or change the order of tasks, you will need to modify the "Dags230622(EL_pipeline).py" file following the Apache Airflow DAGs guidelines.
 
+## Custom Objects
+
+All the custom objects (Extractor, Transformer, and Loader) are stored in "ELPytharix.py", located in "DLA-Internship/Scheduler/EL_pipeline_resources". If you want to change or add objects to the ETL process, you can do so in this file.
+
 ## Future Enhancements
 
 In future development, the project can be expanded to include additional data sources and targets, making the ETL process even more versatile and adaptable. Additionally, further integration with Apache Airflow can enable more complex scheduling and monitoring capabilities.
+
